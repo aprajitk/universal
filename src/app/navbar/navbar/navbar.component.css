@@ -1,0 +1,19 @@
+#logo{
+    width:40px;
+    height:40px;
+}
+#mainpage{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    font-size: 150%;
+    font-weight: bold;
+    color: black;
+}
+.float-right{
+    float: right;
+}
+#navbarDropdown:hover{
+    font-weight: bold;
+    color: black; 
+    font-family: Arial, Helvetica, sans-serif;
+}

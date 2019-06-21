@@ -1,0 +1,22 @@
+.log-in{
+    width: 300px;
+    height: 200px;
+    border-radius: 25px;
+    margin: 0 auto;
+    padding: 30px;
+    margin-top: 50px;
+    /* border: 1px solid 
+    blue; */
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px 5px rgba(175, 175, 175, 0.493);
+  
+}
+.log-in-element{
+    margin-left: 15%;
+    margin-right:15%;
+    width: 70%;
+}
+.material-icons{
+  font-size: 40px; 
+}

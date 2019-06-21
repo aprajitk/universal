@@ -1,0 +1,19 @@
+<form class="log-in" [formGroup]="login_form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <input matInput type="text" class="log-in-element" formControlName="contact"  placeholder="Enter phone number"
+        [errorStateMatcher]="parentErrorStateMatcher" (keypress)="numberOnly($event)" (input)="onSearchChange($event.target.value)">
+        <!-- <mat-icon matSuffix>phone</mat-icon> -->
+            <mat-error><div>{{error}}</div></mat-error> 
+            <div>{{error}}</div>
+      </mat-form-field>
+      <br>
+      <br>
+    <mat-radio-group formControlName="options" color="accent">
+      <mat-radio-button value="Vendor" [checked]="true">Vendor &nbsp; &nbsp;&nbsp;</mat-radio-button>
+      <mat-radio-button value="User">User</mat-radio-button>
+    </mat-radio-group>
+  <br>
+  <button style="color: blue;" class="btn" type="submit">
+      <i class="material-icons large">play_circle_outline</i>
+    </button>
+</form>
