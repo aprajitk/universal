@@ -1,0 +1,17 @@
+#addbutton{
+    border-top: none;
+    background-color: white;
+   border-radius: 25px;
+}
+#id{
+    float: right;
+}
+.card{
+    margin: 30px auto;
+    margin-top: 50px;
+    width: 700px;
+    height: auto;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px 5px rgba(175, 175, 175, 0.493);
+}
