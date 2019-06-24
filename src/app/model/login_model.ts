@@ -2,7 +2,7 @@ import { FormGroup } from '@angular/forms';
 
 export class Login_model{
     contact:string='contact';
-    options:Array<string>;
+    options:Array<string>=["vendor","user"];
 
     constructor(){
     

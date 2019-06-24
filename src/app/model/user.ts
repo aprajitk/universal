@@ -3,4 +3,6 @@ export class User {
     email:string;
     contact:number;
     address:string;
+    type:string;
+    photo: string;
 }

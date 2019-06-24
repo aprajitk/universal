@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { User } from 'src/app/model/user';
-import { LoginService } from 'src/app/taskmanager/login.service';
+
 
 @Component({
   selector: 'app-userdetails',
@@ -8,16 +8,10 @@ import { LoginService } from 'src/app/taskmanager/login.service';
   styleUrls: ['./userdetails.component.css']
 })
 export class UserdetailsComponent implements OnInit {
-user:User;
-  constructor( private _fetchuserdata:LoginService) { }
-
-  ngOnInit() {
-    this._fetchuserdata.getUserData().subscribe(data =>{this.user=data;
-
-      
-    })
-    
+  @Input('userInfo') public user1;
+  constructor() { 
   }
-
-
+  ngOnInit() {
+    console.log(this.user1)
+  }
 }

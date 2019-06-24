@@ -7,9 +7,13 @@ import { Observable } from 'rxjs';
 export class LoginService {
 
   user_url="assets\\jsondata\\user.json";
+  vendor_url="assets\\jsondata\\vendor.json";
   constructor(private _http: HttpClient) { }
 
   getUserData():Observable<any>{
     return this._http.get(this.user_url);
+  }
+  getVendorData():Observable<any>{
+    return this._http.get(this.vendor_url);
   }
 }

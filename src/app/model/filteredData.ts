@@ -1,4 +1,4 @@
-export class Vendor {
+export class FilteredData {
     name:string;
     email:string;
     contact:number;

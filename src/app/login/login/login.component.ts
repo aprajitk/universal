@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {FormsModule, FormGroup, FormBuilder, Validators, NgForm} from '@angular/forms';
 import { Login_model } from 'src/app/model/login_model';
 import { User } from 'src/app/model/user';
-import { Navigation } from 'selenium-webdriver';
 import { Router } from '@angular/router';
+// import 'rxjs/add/operator/map';
+import { forkJoin, Observable } from 'rxjs';
 import { LoginService } from 'src/app/taskmanager/login.service';
+import { FilteredData } from 'src/app/model/filteredData';
+import { Vendor } from 'src/app/model/vendor';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,9 +17,10 @@ export class LoginComponent implements OnInit {
   login_form: FormGroup;
   login_model: Login_model;
   user:User;
+  vendor:Vendor;
   contact: string='contact';
-  options: Array<string>=["Vendor", "User"];
   error:string;
+  public filteredUser="App";
   isInvalid:boolean;
   submitted:boolean=false;
   constructor( private fb: FormBuilder, private rout:Router, private _fetchuserdata:LoginService) {
@@ -48,13 +52,14 @@ export class LoginComponent implements OnInit {
 
      return this.error="enter 10 digit number";
      }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
-      for(let i in this.user){
-        if(this.login_model.contact == this.user[i].contact){
-          console.log("app")
-           this.rout.navigate(['/userdetails']);
-        }
-      }
+    //  console.log(this.login_model.options)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+      // for(let i in this.user){
+      //   if(this.login_model.contact == this.user[i].contact && this.login_model.options==this.user[i].type){
+          
+      //     console.log(this.login_model.options)
+      //      this.rout.navigate(['/userdetails']);
+      //   }
+      // }
      if(this.login_form.value){
        
       this.login_form.reset();
@@ -62,8 +67,8 @@ export class LoginComponent implements OnInit {
     }
    }
   ngOnInit() {
-    this._fetchuserdata.getUserData().subscribe(data =>this.user=data) 
-
+   
+console.log(this.filteredUser)
   }
 
   numberOnly(event): boolean {
@@ -72,5 +77,27 @@ export class LoginComponent implements OnInit {
       return false;
     }
     return true;
+  }
+
+  userDetail(){
+    forkJoin([this._fetchuserdata.getUserData(),this._fetchuserdata.getVendorData()])
+    .subscribe(data =>{this.user=data[0];
+      this.vendor=data[1];
+      console.log(this.vendor);{
+      for(let i in this.user){
+        if(this.login_model.contact == this.user[i].contact && this.login_model.options==this.user[i].type){
+        //  this.filteredUser= this.user[i]
+         console.log(this.filteredUser)
+         this.rout.navigate(['/userdetails']);
+         break;
+          // console.log(this.login_model.options)
+           
+        }}
+      }
+    }) 
+    
+  }
+  onDestroy(){
+    console.log("appa")
   }
 }

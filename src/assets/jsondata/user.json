@@ -2,29 +2,39 @@
     "name": "user1",
     "email": "user1@gmail.com",
     "contact": "1234567890",
-    "address": "user1Home"
+    "address": "user1Home",
+    "type": "user",
+    "photo": "assets\\user.jpg"
 },
 {
     "name": "user1",
     "email": "user1@gmail.com",
     "contact": "2234567890",
-    "address": "user1Home"
+    "address": "user1Home",
+    "type": "user",
+    "photo": "assets\\user.jpg"
 },
 {
     "name": "user1",
     "email": "user1@gmail.com",
     "contact": "3234567890",
-    "address": "user1Home"
+    "address": "user1Home",
+    "type": "user",
+    "photo": "assets\\user.jpg"
 },
 {
     "name": "user1",
     "email": "user1@gmail.com",
     "contact": "4234567890",
-    "address": "user1Home"
+    "address": "user1Home",
+    "type": "user",
+    "photo": "assets\\user.jpg"
 },
 {
     "name": "user1",
     "email": "user1@gmail.com",
     "contact": "5234567890",
-    "address": "user1Home"
+    "address": "user1Home",
+    "type": "user",
+    "photo": "assets\\user.jpg"
 }]

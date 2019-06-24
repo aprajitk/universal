@@ -1,4 +1,4 @@
-<form class="log-in" [formGroup]="login_form" (ngSubmit)="onSubmit()">
+<form class="log-in" [formGroup]="login_form" (ngSubmit)="[onSubmit() , userDetail()]">
     <mat-form-field>
         <input matInput type="text" class="log-in-element" formControlName="contact"  placeholder="Enter phone number"
         [errorStateMatcher]="parentErrorStateMatcher" (keypress)="numberOnly($event)" (input)="onSearchChange($event.target.value)">
@@ -9,11 +9,12 @@
       <br>
       <br>
     <mat-radio-group formControlName="options" color="primary">
-      <mat-radio-button value="Vendor" [checked]="true">Vendor &nbsp; &nbsp;&nbsp;</mat-radio-button>
-      <mat-radio-button value="User">User</mat-radio-button>
+      <mat-radio-button value="vendor" [checked]="true">Vendor &nbsp; &nbsp;&nbsp;</mat-radio-button>
+      <mat-radio-button value="user">User</mat-radio-button>
     </mat-radio-group>
   <br>
-  <button style="color: blue;" class="btn" type="submit">
+  <button style="color: blue;" class="btn" type="submit" >
       <i class="material-icons large">play_circle_outline</i>
     </button>
 </form>
+ <app-userdetails [userInfo]="'filteredUser'"></app-userdetails>
